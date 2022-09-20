@@ -1,6 +1,4 @@
-from tkinter import W
-from venv import create
 from app import create_app
+from .config import Config
 
-create_app()
-
+create_app(Config)

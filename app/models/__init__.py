@@ -1,3 +1,4 @@
+"""Import models for easy use"""
 from .category import Category
 from .country import Country
 from .person import Person
