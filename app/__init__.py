@@ -10,7 +10,7 @@ from config import Config
 db = SQLAlchemy()
 ma = Marshmallow()
 
-def create_app(config_class=Config):
+def create_app(config_class=Config()):
   """App factory for creating flask app"""
   app = Flask(__name__)
   CORS(app)

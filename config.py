@@ -1,5 +1,8 @@
 from datetime import timedelta
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class Config(object):
   """Config class"""
@@ -18,6 +21,3 @@ class Config(object):
 
   GOOGLE_OAUTH_CLIENT_ID = os.getenv('GOOGLE_OAUTH_CLIENT_ID')
   GOOGLE_OAUTH_CLIENT_SECRET= os.getenv('GOOGLE_OAUTH_CLIENT_SECRET')
-  
-# '14474533764-05qds5reeesgsu8bj5008fjmc3n5o24g.apps.googleusercontent.com',
-# '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',
