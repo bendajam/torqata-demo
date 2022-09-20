@@ -9,6 +9,7 @@ The focus for demo was to show
 
 ## Build Frontend
 To build for production you would need to 
+
 ``` cd frontend ```
 
 ``` ng build --stats-json ```
@@ -22,8 +23,11 @@ The above commands build the front end and create manifest for the flask applica
 ## Run flask
 
 ``` pip3 install -r requirements.txt ```
+
 ``` flask run ```
 
 
 ## Config
 Since we are using OAuth there are ids associated with google that allows it to connect to the OAuth provider by google. To ensure login works you will need to provide a .env file for the system you are deploying to. 
+
+You will also need to add in username and password to your postgres db.
