@@ -16,4 +16,4 @@ def test_unauthorized(client):
         response = client.get(url_for("shows.show_list"))
 
     # currently the unauthorized redirects to login
-    assert HTTPStatus.FOUND == response.status_code
+    assert HTTPStatus.UNAUTHORIZED == response.status_code

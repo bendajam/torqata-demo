@@ -131,6 +131,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# sqlite
+sqlite.db
+
 # nodejs / angular
 .angular/
 node_modules/

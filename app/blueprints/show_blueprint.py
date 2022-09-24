@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from sqlalchemy import text
-from app import models, schemas
+from app import models, schemas, login_required
 
 show_schema = schemas.ShowSchema()
 shows_schema = schemas.ShowSchema(many=True)
@@ -9,6 +9,7 @@ shows = Blueprint('shows', __name__, url_prefix='/api/show')
 
 
 @shows.route('/list', methods=['GET'])
+@login_required
 def show_list():
     page = request.args.get('page', 1, type=int)
     per_page = request.args.get('per_page', 50, type=int)
@@ -28,6 +29,7 @@ def show_list():
 
 
 @shows.route('/<int:show_id>', methods=['GET'])
+@login_required
 def show_detail(show_id: int):
     show = models.Show.query.get(show_id)
     return jsonify({'result': show_schema.dump(show)})

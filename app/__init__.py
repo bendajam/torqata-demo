@@ -3,12 +3,12 @@ from functools import wraps
 from flask import Flask, session
 from flask_cors import CORS
 from sqlalchemy import create_engine
-from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from authlib.integrations.flask_client import OAuth
+from app.models.base import BaseModel
 from config import Config
+from .database import db
 
-db = SQLAlchemy()
 ma = Marshmallow()
 
 
@@ -51,7 +51,7 @@ def create_app(config_class=Config()):
         app.register_blueprint(user_blueprint.auth)
         app.register_blueprint(app_blueprint.app_blueprint)
         # create engine to db uri and create all models that extend db
-        engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
+        engine = db.engine
         db.metadata.create_all(engine)
 
     return app
