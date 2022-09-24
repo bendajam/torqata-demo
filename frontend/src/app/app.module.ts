@@ -4,20 +4,32 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NetflixShowComponent } from './netflix-show/netflix-show.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatTableModule } from '@angular/material/table'  
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+
+
+
+
+import { HeaderComponent } from './component/header/header.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { NetflixShowComponent } from './component/netflix-show/netflix-show.component';
+import { AppComponent } from './app.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NetflixShowComponent
+    NetflixShowComponent,
+    HeaderComponent,
+    FooterComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +40,11 @@ import {MatSortModule} from '@angular/material/sort';
     // material ui 
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatGridListModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

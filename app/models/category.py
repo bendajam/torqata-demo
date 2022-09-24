@@ -1,7 +1,7 @@
-from .base import BaseModel
 from app import db
+from .base import BaseModel
 
-"""
-"""
+
 class Category(BaseModel):
-  title = db.Column(db.String)
+    """Category of show."""
+    title = db.Column(db.String)

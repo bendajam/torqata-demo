@@ -37,6 +37,9 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
+.DS_Store
+
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -131,3 +134,4 @@ dmypy.json
 # nodejs / angular
 .angular/
 node_modules/
+/app/static/deploy:webassets

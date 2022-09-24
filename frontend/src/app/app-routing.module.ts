@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NetflixShowComponent } from './netflix-show/netflix-show.component';
+import { NetflixShowComponent } from './component/netflix-show/netflix-show.component';
 
 const routes: Routes = [
-  {path: 'netflix-shows', component: NetflixShowComponent}
+  {path: '', component: NetflixShowComponent}
 ];
 
 @NgModule({

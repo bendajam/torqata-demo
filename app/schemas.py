@@ -1,48 +1,68 @@
+from marshmallow_sqlalchemy import fields
 from app import ma, models
-from marshmallow_sqlalchemy import fields 
+
 
 class CategorySchema(ma.SQLAlchemySchema):
-  class Meta:
-    model = models.Category 
-  
-  id = ma.auto_field()
-  title = ma.auto_field()
+    """Category marshmellow schema."""
+    class Meta:
+        """Link sqlalchemy model."""
+        model = models.Category
+
+    id = ma.auto_field()
+    title = ma.auto_field()
+
 
 class CountrySchema(ma.SQLAlchemySchema):
-  class Meta:
-    model = models.Country 
+    """Country marshmellow schema."""
+    class Meta:
+        """Link sqlalchemy model."""
+        model = models.Country
 
-  id = ma.auto_field()
-  name = ma.auto_field()
+    id = ma.auto_field()
+    name = ma.auto_field()
 
-  # model schema for marshmallow
+    # model schema for marshmallow
+
+
 class ShowSchema(ma.SQLAlchemyAutoSchema):
-  class Meta:
-    model = models.Show
+    """Show marshmellow schema."""
+    class Meta:
+        """Link sqlalchemy model."""
+        model = models.Show
+
 
 class PersonSchema(ma.SQLAlchemySchema):
-  class Meta:
-    model = models.Person
+    """Person marshmellow schema."""
+    class Meta:
+        """Link sqlalchemy model."""
+        model = models.Person
 
-  id = ma.auto_field()
-  name = ma.auto_field()
+    id = ma.auto_field()
+    name = ma.auto_field()
+
 
 class PersonDetailSchema(ma.SQLAlchemySchema):
-  class Meta:
-    model = models.Person
+    """Person Details marshmellow schema."""
+    class Meta:
+        """Link sqlalchemy model."""
+        model = models.Person
 
-  id = ma.auto_field()
-  name = ma.auto_field()
+    id = ma.auto_field()
+    name = ma.auto_field()
 
-  cast = fields.Nested(ShowSchema, many=True)
-  directed = fields.Nested(ShowSchema, many=True)
+    cast = fields.Nested(ShowSchema, many=True)
+    directed = fields.Nested(ShowSchema, many=True)
 
 # model schema for marshmallow
-class ShowDetailSchema(ma.SQLAlchemyAutoSchema):
-  class Meta:
-    model = models.Show
 
-  directors = fields.Nested(PersonSchema, many=True)
-  cast = fields.Nested(PersonSchema, many=True)
-  countries = fields.Nested(CountrySchema, many=True)
-  categories = fields.Nested(CategorySchema, many=True)
+
+class ShowDetailSchema(ma.SQLAlchemyAutoSchema):
+    """Show Details marshmellow schema."""
+    class Meta:
+        """Link sqlalchemy model."""
+        model = models.Show
+
+    directors = fields.Nested(PersonSchema, many=True)
+    cast = fields.Nested(PersonSchema, many=True)
+    countries = fields.Nested(CountrySchema, many=True)
+    categories = fields.Nested(CategorySchema, many=True)

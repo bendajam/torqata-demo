@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <mat-grid-list cols="1" rowHeight="2:1">
+      <app-header></app-header>
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+    </mat-grid-list>
+  `, 
 })
-export class AppComponent {
-  title = 'torqata';
-}
+export class AppComponent { }

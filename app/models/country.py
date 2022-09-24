@@ -1,5 +1,7 @@
-from .base import BaseModel
 from app import db
+from .base import BaseModel
+
 
 class Country(BaseModel):
-  name = db.Column(db.String)
+    """Country show is provided in."""
+    name = db.Column(db.String)
